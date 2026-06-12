@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Tag responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este é uma site modelo">
+    <meta name="keywords" content="Sites, Web, Desenvolvimento Back-End">
+    <meta name="author" content="Maria Eduarda M. demelogabrielm@gmail.com">
+    <title>DESAFIO 01 - JS</title> <!-- Icone do site -->
+    <link rel="icon" type="image/jpg" href="../favicon.jpg">
+</head>
+
+<body>
+    <h1>DESAFIO 01 - SOMA OU SUBTRAÇÃO (alert) </h1>
+    <hr>
+    <script>
+        window.alert("Seja bem-vindo ao site");
+        let num1 = window.prompt("Me informe um número: ");
+        num1 = parseFloat(num1)
+        console.log(num1);
+        let num2 = window.prompt("Me informe outro número: ") 
+        console.log(num2);
+        num2 = parseFloat(num2)
+        let resp = window.prompt("Você deseja somar ou subtrair?");
+        console.log(resp);
+        if(reposta = true){
+            let soma = num1+num2
+            window.alert("A soma é: "+soma);
+        }else{
+            let subtração = num1-num2
+            window.alert("A subtração é:"+subtração);
+        }
+    </script>    
+</body>
+
+</html

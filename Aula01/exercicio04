@@ -11,17 +11,18 @@
     <title>EXERCÍCIO 01</title> <!-- Icone do site -->
     <link rel="icon" type="image/webp" href="../favicon.webp">
 </head>
+
 <body>
-    <h1>Lista de Exercícios da Aula 1 em JS</h1>
+    <h1>Integrando os recursos de interatividade do js</h1>
     <hr>
-    <ul>
-        <li><a href="exercicio01.html" target="_blank">Exercício 01</a> </li>
-        <li><a href="exercicio02.html" target="_blank">Exercício 02</a> </li>
-        <li><a href="exercicio03.html" target="_blank">Exercício 03/a> </li>
-        <li><a href="exercicio04" target="_blank">Exercício 04/a> </li>
-        <!-- <li><a href="exercicio03.html" target="_blank">Exercício 03</a> </li> -->
-    </ul>
-    </hr>
+    <script>
+        window.alert("Seja be,vindo ao site");
+        let nome = window.prompt("Qual é o seu nome?");
+        if (resposta.log) (resposta);
+        window.close("Aproveite o site");
+  
+
+    </script>
 </body>
 
 </html>
