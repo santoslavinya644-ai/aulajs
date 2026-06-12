@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "reset.css";
+@import "cores.css";
+
+@font-face {
+    font-family:Nellysia  ;
+    src: url(fonts/Nellysia\ Sorettein\ Demo.otf);
+}
+
+body{
+    color:var(--cor1);
+    
+    font-family: Nellysia ;
+    background-color: var(--tuscan);
+}
+    
+    
+

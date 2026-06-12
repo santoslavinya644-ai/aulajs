@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" href="https://swansdown.com/" hreflang="en-US" />
+
+    <script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.7 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Classic Cupcakes Recipe For Parties – Swans Down® Cake Flour</title>
+	<meta name="description" content="Classic Cupcakes are moist and topped with creamy cream cheese icing. Perfect for birthdays, parties, or anytime you want a sweet treat." />
+	<link rel="canonical" href="https://swansdown.com/recipes/classic-cupcakes/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Classic Cupcakes Recipe For Parties – Swans Down® Cake Flour" />
+	<meta property="og:description" content="Classic Cupcakes are moist and topped with creamy cream cheese icing. Perfect for birthdays, parties, or anytime you want a sweet treat." />
+	<meta property="og:url" content="https://swansdown.com/recipes/classic-cupcakes/" />
+	<meta property="og:site_name" content="Swans Down Cake Flour" />
+	<meta property="article:publisher" content="https://www.facebook.com/SwansDownCakeFlour" />
+	<meta property="article:modified_time" content="2026-02-26T20:50:50+00:00" />
+	<meta property="og:image" content="https://swansdown.com/wp-content/uploads/2018/09/SOP_Cupcake_web-LG-e1770142023962-1024x769.jpg" />
+	<meta property="og:image:width" content="1024" />
+	<meta property="og:image:height" content="769" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="amphtml" href="https://swansdown.com/recipes/classic-cupcakes/amp/" /><meta name="generator" content="AMP for WP 1.1.14"/><link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel="alternate" type="application/rss+xml" title="Swans Down Cake Flour &raquo; Feed" href="https://swansdown.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Swans Down Cake Flour &raquo; Comments Feed" href="https://swansdown.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Swans Down Cake Flour &raquo; Classic Cupcakes Comments Feed" href="https://swansdown.com/recipes/classic-cupcakes/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://swansdown.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswansdown.com%2Frecipes%2Fclassic-cupcakes%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://swansdown.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswansdown.com%2Frecipes%2Fclassic-cupcakes%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='font-awesome-css' href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css?ver=6.7.2' media='all' />
+<link rel='stylesheet' id='theme-style-css' href='https://swansdown.com/wp-content/themes/swansdown-theme/style.css?ver=7.0' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//swansdown.com/wp-content/uploads/pum/pum-site-styles.css?generated=1774623070&#038;ver=1.22.0' media='all' />
+<link rel='stylesheet' id='gform_basic-css' href='https://swansdown.com/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.10.2' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://swansdown.com/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.10.2' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://swansdown.com/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.10.2' media='all' />
+<script id="jquery-core-js" src="https://swansdown.com/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js-before">
+jQuery.migrateMute = true;
+//# sourceURL=jquery-migrate-js-before
+</script>
+<script id="jquery-migrate-js" src="https://swansdown.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="fancybox-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/jquery.fancybox.min.js?ver=7.0"></script>
+<script id="modernizer-custom_build-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/modernizr-customBuild.js?ver=7.0"></script>
+<script id="theme_slideshow-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/themeSlideshow.js?ver=7.0"></script>
+<script id="theme_header_navigation-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/themeHeaderNavigation.js?ver=7.0"></script>
+<script id="theme_image_scaling-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/themeImageScaling.js?ver=7.0"></script>
+<script id="theme_accordion-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/themeAccordion.js?ver=7.0"></script>
+<script id="newsletter_signup-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/newsletterSignup.js?ver=7.0"></script>
+<script id="ad_rotator-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/rotator.js?ver=7.0"></script>
+<script id="module_product_gallery-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/moduleProductGallery.js?ver=7.0"></script>
+<script id="module_tabs-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/moduleTabs.js?ver=7.0"></script>
+<script id="rate_recipe-js" src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/rateRecipe.js?ver=7.0"></script>
+<script id="gform_json-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.2"></script>
+<script id="gform_gravityforms-js-extra">
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://swansdown.com/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://swansdown.com/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"c5e344ca386326b00b2602f5e32e6620","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://swansdown.com/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://swansdown.com/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"c5e344ca386326b00b2602f5e32e6620","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"2":""};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://swansdown.com/wp-content/plugins/gravityforms/images"}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.10.2"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=3f278756f0a3032bed328ff6a9f6c01d"></script>
+<link rel="https://api.w.org/" href="https://swansdown.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://swansdown.com/wp-json/wp/v2/recipes/678" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://swansdown.com/wp/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.0" />
+<link rel='shortlink' href='https://swansdown.com/?p=678' />
+		<meta property="fb:pages" content=" 141949505970022" />
+		<noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="https://swansdown.com/wp-content/uploads/2025/11/cropped-avatar-sd-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://swansdown.com/wp-content/uploads/2025/11/cropped-avatar-sd-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://swansdown.com/wp-content/uploads/2025/11/cropped-avatar-sd-180x180.png" />
+<meta name="msapplication-TileImage" content="https://swansdown.com/wp-content/uploads/2025/11/cropped-avatar-sd-270x270.png" />
+
+    <!-- BEGIN SHAREAHOLIC CODE -->
+    <link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+    <meta name="shareaholic:site_id" content="1a57df99ab877a2fd575a98227015a36" />
+    <script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+    <!-- END SHAREAHOLIC CODE -->
+
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/rmt4frs.css" media="all">
+
+            <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NJXH28F');
+        </script>
+        <!-- End Google Tag Manager -->
+    </head>
+
+<body class="wp-singular recipes-template-default single single-recipes postid-678 wp-theme-swansdown-theme">
+
+            <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJXH28F"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+    
+    <header class="header" id="Header">
+
+        <a href="#Main" class="skip">Skip to main content.</a>
+
+        <div class="header-upper">
+            <div class="upper-container">
+                <div class="container-find_store">
+                    <a class="find_store-link" href="https://swansdown.com/stores/">
+                        <svg class="icon-store" viewBox="0 0 640 640">
+                            <path d="M176 252.6C176 175.7 239.7 112 320 112C400.3 112 464 175.7 464 252.6C464 298.2 440.2 354.1 405.1 409.7C376.8 454.5 344.1 494.5 320 521.8C295.9 494.5 263.3 454.6 234.9 409.7C199.8 354.2 176 298.2 176 252.6zM320 64C214 64 128 148.4 128 252.6C128 371.9 248.2 514.9 298.4 569.4C310.2 582.2 329.8 582.2 341.6 569.4C391.8 514.9 512 371.9 512 252.6C512 148.4 426 64 320 64zM288 256C288 238.3 302.3 224 320 224C337.7 224 352 238.3 352 256C352 273.7 337.7 288 320 288C302.3 288 288 273.7 288 256zM400 256C400 211.8 364.2 176 320 176C275.8 176 240 211.8 240 256C240 300.2 275.8 336 320 336C364.2 336 400 300.2 400 256z" />
+                        </svg>
+                        Find a Store
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header-content">
+
+            <a class="content-toggle" id="header_menu_toggle">
+                <svg class="hamburger" viewBox="0 0 640 640">
+                    <path d="M320 208C289.1 208 264 182.9 264 152C264 121.1 289.1 96 320 96C350.9 96 376 121.1 376 152C376 182.9 350.9 208 320 208zM320 432C350.9 432 376 457.1 376 488C376 518.9 350.9 544 320 544C289.1 544 264 518.9 264 488C264 457.1 289.1 432 320 432zM376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320z" />
+                </svg>
+                <i class="fa fa-times" aria-hidden="true" style="display: none;"></i>
+            </a>
+
+            <ul id="header_navigation_left" class="content-menu"><li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="https://swansdown.com/product/">Product</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a href="https://swansdown.com/recipes/">Recipes</a></li>
+<li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="https://swansdown.com/baking-tips/">Baking Tips</a></li>
+</ul><div class="content-logo"><a class="logo-link" href="/" aria-label="Swans Down Cake Flower Homepage"><span class="sr-only">Swansdown Homepage</span><img class="logo-header logo-desktop lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Swansdown Logo" data-src="/wp-content/themes/swansdown-theme/images/logo-swans-down.svg" decoding="async"><noscript><img class="logo-header logo-desktop" src="/wp-content/themes/swansdown-theme/images/logo-swans-down.svg" alt="Swansdown Logo" data-eio="l"></noscript><img class="logo-header logo-mobile lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Swansdown Logo" data-src="/wp-content/themes/swansdown-theme/images/logo-swans-down-swan.svg" decoding="async"><noscript><img class="logo-header logo-mobile" src="/wp-content/themes/swansdown-theme/images/logo-swans-down-swan.svg" alt="Swansdown Logo" data-eio="l"></noscript></a></div><ul id="header_navigation_right" class="content-menu"><li id="menu-item-2191" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2191"><a href="https://swansdown.com/blog/">Blog</a></li>
+<li id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191"><a href="https://swansdown.com/about/">Since 1894</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="https://shop.swansdown.com"><span class="shop-now">Shop <span class="sr-only">Swansdown Flour </span>Now<span class="sr-only"> (Link opens external site)</span></span></a></li>
+</ul>
+            <div class="search">
+                <a class="shop-cart" href="https://shop.swansdown.com" target="_blank" aria-label="Shop Swansdown Store">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="sr-only">Shop Swansdown Store (opens in new window)</span>
+                </a>
+                <svg class="icon-search" viewBox="0 0 640 640">
+                    <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z" />
+                </svg>
+            </div>
+
+            <div class="container-search">
+                <form class="search-form" role="search" method="get" action="https://swansdown.com/">
+                    <label for="form-input" class="sr-only">Search keywords</label>
+                    <input id="form-input" class="form-input active" type="text" placeholder="Find baking magic..." value="" name="s" required="required">
+                    <button class="sr-only" type="submit">Search</button>
+                </form>
+            </div>
+
+            <ul class="content-menu mobileOnly">
+                <li class="menu-item"><a class="find_store-link" href="https://swansdown.com/stores/">Find a Store</a></li>
+                <li class="menu-item"><a class="contact-link" target="_blank" href="https://reilyproducts.com/contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Mobile Menu Bar -->
+        <!--
+        <div class="mobile-menu-bar">
+            <a class="mobile-menu-bar-item" href="/recipes">Recipes</a>
+            <a class="mobile-menu-bar-item" href="/blog">Blog</a>
+            <a class="mobile-menu-bar-item" href="/stores">Find a Store</a>
+            <a class="mobile-menu-bar-item" href="https://shop.swansdown.com/">Shop Now</a>
+        </div>
+        -->
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <button class="mobile-nav-close" aria-label="Close navigation">×</button>
+            <div class="mobile-nav-content">
+                <ul id="mobile_navigation_left" class="mobile-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="https://swansdown.com/product/">Product</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a href="https://swansdown.com/recipes/">Recipes</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="https://swansdown.com/baking-tips/">Baking Tips</a></li>
+</ul><ul id="mobile_navigation_right" class="mobile-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2191"><a href="https://swansdown.com/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191"><a href="https://swansdown.com/about/">Since 1894</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="https://shop.swansdown.com"><span class="shop-now">Shop <span class="sr-only">Swansdown Flour </span>Now<span class="sr-only"> (Link opens external site)</span></span></a></li>
+</ul>                <div class="mobile-menu-extras">
+                    <a class="mobile-link" href="https://swansdown.com/stores/">Find a Store</a>
+                    <a class="mobile-link" target="_blank" href="https://reilyproducts.com/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main class="main" id="Main">
+<div class="layout-single_recipe">
+  <div class="single_recipe-loop_content">
+
+  
+<script type="application/ld+json">
+    {
+        "@context": "http:\/\/schema.org\/",
+        "@type": "Recipe",
+        "name": "Classic Cupcakes",
+        "author": {
+            "@type": "Organization",
+            "name": "Swans Down Cake Flour"
+        },
+        "description": "Delightful, delicious cake recipes and more from Swans Down Cake Flour!",
+        "image": ["https://swansdown.com/wp-content/uploads/2018/09/SOP_Cupcake_web-LG-e1770142023962-1024x769.jpg"]
+    }
+</script>
+
+<div class="loop_content-recipe_content">
+    <div class="recipe_content-the_content">
+        <div class="the_content-recipe">
+
+            
+            <div class="recipe-hero_wrapper">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAMBAQMAAABLKFTrAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAHdJREFUeNrtwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADOBoOQAAHIo4zIAAAAAElFTkSuQmCC" alt="A classic cupcake with pink frosting and colorful sprinkles sits on a pink plate against a bright pink background." class="recipe-hero_image lazyload" data-src="https://swansdown.com/wp-content/uploads/2018/09/SOP_Cupcake_web-LG-e1770142023962-1024x769.jpg" decoding="async" data-eio-rwidth="1024" data-eio-rheight="769" /><noscript><img src="https://swansdown.com/wp-content/uploads/2018/09/SOP_Cupcake_web-LG-e1770142023962-1024x769.jpg" alt="A classic cupcake with pink frosting and colorful sprinkles sits on a pink plate against a bright pink background." class="recipe-hero_image" data-eio="l" /></noscript>
+            </div>
+
+            <div class="recipe-content">
+                <div class="breadcrumb-row">
+                                        <a class="breadcrumb" href="https://swansdown.com/recipes/">View all recipes</a>
+                </div>
+                <div class="content-title_line">
+                    <div class="title_line-title recipe-meta">
+                        <h1 class="recipe-title">
+                            Classic Cupcakes                        </h1>
+                        <div class="shareaholic-canvas" data-app="share_buttons" data-app-id="33260205"></div>
+                    </div>
+                    <div class="title_line-reviews-test">
+                        	<div class="rating" data-id="678" data-action="rate_recipe" data-nonce="56a48b7c58" data-domain="swansdown.com">
+
+				<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+			<meta itemprop="ratingValue" content="5">
+			<meta itemprop="reviewCount" content="18">
+		</span>
+		
+		<div class="rating-display rating-rated">
+			<div class="rating-stars rating-average" title="5 Stars" data-title-suffix=" Stars">
+				<div class="rating-stars-on" style="width:100%"></div>
+
+				
+			</div>
+		</div>
+
+				<div class="rating-count">
+			<div class="rating-text"><span>18</span> Votes</div>
+		</div>
+		
+				<div class="rating-vote">
+			<div class="rating-text">
+				<div class="rating-vote-panel">
+					<span class="rating-vote-cta" data-thanks="Thanks for Voting!">Rate This Recipe</span>
+					<div class="rating-vote-box">
+						<div class="rating-vote-x">&times;</div>
+						<div class="rating-display">
+							<div class="rating-stars">
+								<div class="rating-stars-on"></div>
+							</div>
+							<ul>
+								<li><i></i></li>
+								<li><i></i></li>
+								<li><i></i></li>
+								<li><i></i></li>
+								<li><i></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		    <!-- <div class="title_line-print"><a href="#" onclick="window.print();return false;">Print</a></div> -->
+	</div>
+	                    </div>
+                </div>
+                                    <div class="content-prep_bake_yield">
+                        <div class="prep_bake_yield-prep"><strong>Prep:</strong> 15 min</div>                        <div class="prep_bake_yield-bake"><strong>Bake:</strong> 25 min</div>                        <div class="prep_bake_yield-yield"><strong>Yield:</strong> 12 cupcakes</div>                    </div>
+                                                    <div class="content-blurb">
+                        Classic Cupcakes are a timeless treat everyone loves! Make tender cupcakes using <a href="https://swansdown.com/product/" target="_blank" rel="noopener">Swans Down® Cake Flour</a>, then top with fluffy cream cheese icing and decorate with fruit, sprinkles, or chocolate for a perfect dessert.                    </div>
+                                <div class="content-instructions">
+                                            <div class="instructions-content">
+                            <div class="content-header">
+                                <span>Ingredients</span>
+                            </div>
+                            <div class="content-body">
+                                <ul>
+<li class="p-ingredient">1/2 cup unsalted butter, room temperature</li>
+<li class="p-ingredient">1 cup sugar</li>
+<li>1 egg</li>
+<li class="p-ingredient">1 1/2 cups <a href="https://swansdown.com/product/" rel="noopener">Swans Down® Cake Flour</a>, <span style="font-weight: 400;"> sifted before measuring</span></li>
+<li class="p-ingredient">1/2 teaspoon salt</li>
+<li class="p-ingredient">1/2 teaspoon baking soda</li>
+<li>1/2 teaspoon baking powder</li>
+<li>1/2 cup buttermilk</li>
+<li class="p-ingredient">1 teaspoon vanilla</li>
+<li class="p-ingredient">1/2 cup boiling water</li>
+</ul>
+<p><strong>Cream Cheese Icing</strong></p>
+<ul>
+<li class="p-ingredient">8 ounces cream cheese, room temperature</li>
+<li class="p-ingredient">2 1/2 cups confectioners&#8217; sugar</li>
+<li class="p-ingredient">2 teaspoons heavy cream, room temperature</li>
+<li class="p-ingredient">3/4 teaspoons vanilla extract</li>
+</ul>
+                            </div>
+                        </div>
+
+                                            <div class="instructions-content">
+                            <div class="content-header"><span>Directions</span></div>
+                            <div class="content-body"><div class="e-instructions">
+<ol>
+<li>Preheat oven to 350℉. Line a cupcake pan with paper liners.</li>
+<li>Cream butter until light and fluffy. Add sugar and continue to beat on medium speed for another 2 to 3 minutes. Add egg and beat until completely combined.</li>
+<li>In a separate bowl, sift together flour, salt, baking soda and baking powder.</li>
+<li>Add flour mixture to butter mixture in thirds, alternating with adding the buttermilk, beginning and ending with the flour. Add vanilla and boiling water and continue to beat the batter on medium speed until smooth.</li>
+<li>Pour batter into the lined cupcake pan. Bake for 20 to 25 minutes.</li>
+</ol>
+<p><strong>Cream Cheese Icing for Classic Cupcakes</strong></p>
+<ol>
+<li>Mix cream cheese and sugar at low speed with an electric mixer.</li>
+<li>Add heavy cream and vanilla extract and mix at high speed until fluffy.</li>
+<li>Chill in refrigerator until slightly stiff. Spread on cooled cupcakes and decorate with your choice of topping such as edible flowers, fresh fruit, grated chocolate or candy sprinkles.</li>
+</ol>
+</div>
+</div>
+                        </div>
+                                    </div>
+                            </div>
+
+                        <div class="recipe-more_recipes">
+                <a class="more_recipes-button" href="https://swansdown.com/recipes/">More Recipes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="loop_content-comments">
+
+        
+            <div class="comments-title">
+                <span class="title-content">Comments</span>
+            </div>
+
+            <ul class="comments-list">
+
+                		<li class="comment even thread-even depth-1 parent" id="comment-7038">
+				<div id="div-comment-7038" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Debra DeBellis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-7038">February 14, 2025 at 1:26 pm</a>		</div>
+
+		<p>I do not see the recipe</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-7038" data-commentid="7038" data-postid="678" data-belowelement="div-comment-7038" data-respondelement="respond" data-replyto="Reply to Debra DeBellis" aria-label="Reply to Debra DeBellis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-staceym odd alt depth-2" id="comment-7092">
+				<div id="div-comment-7092" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-7092">February 17, 2025 at 8:12 pm</a>		</div>
+
+		<p>Hi Debra<br />
+I will send you an email with a PDF copy of the recipe. It is definitely one of our most popular recipes. I hope you enjoy it. Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-7092" data-commentid="7092" data-postid="678" data-belowelement="div-comment-7092" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-7034">
+				<div id="div-comment-7034" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Ryan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-7034">February 14, 2025 at 12:44 am</a>		</div>
+
+		<p>Where is the recipe</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-7034" data-commentid="7034" data-postid="678" data-belowelement="div-comment-7034" data-respondelement="respond" data-replyto="Reply to Ryan" aria-label="Reply to Ryan">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-staceym odd alt depth-2" id="comment-7097">
+				<div id="div-comment-7097" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-7097">February 17, 2025 at 8:16 pm</a>		</div>
+
+		<p>HI Ryan<br />
+I will send you an email with a PDF copy of the recipe. It is definitely one of our most popular recipes. I hope you enjoy it. Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-7097" data-commentid="7097" data-postid="678" data-belowelement="div-comment-7097" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-6966">
+				<div id="div-comment-6966" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Colette Hill</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-6966">January 29, 2025 at 11:29 pm</a>		</div>
+
+		<p>Is this recipe shared?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-6966" data-commentid="6966" data-postid="678" data-belowelement="div-comment-6966" data-respondelement="respond" data-replyto="Reply to Colette Hill" aria-label="Reply to Colette Hill">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-staceym odd alt depth-2" id="comment-6967">
+				<div id="div-comment-6967" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-6967">January 30, 2025 at 1:45 am</a>		</div>
+
+		<p>Colette, are you having trouble seeing the recipe? Please let us know.In the meantime, I will send you a PDF version via email.<br />
+Thank you for reaching out to us. Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-6967" data-commentid="6967" data-postid="678" data-belowelement="div-comment-6967" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-6940">
+				<div id="div-comment-6940" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Haley</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-6940">January 25, 2025 at 2:54 pm</a>		</div>
+
+		<p>Where do we get the recipe? Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-6940" data-commentid="6940" data-postid="678" data-belowelement="div-comment-6940" data-respondelement="respond" data-replyto="Reply to Haley" aria-label="Reply to Haley">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-staceym odd alt depth-2" id="comment-6954">
+				<div id="div-comment-6954" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-6954">January 27, 2025 at 4:26 pm</a>		</div>
+
+		<p>HI Haley,<br />
+I sent you a PDF version of the recipe via email. Please be on the lookout for it.<br />
+Happy Baking and enjoy!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-6954" data-commentid="6954" data-postid="678" data-belowelement="div-comment-6954" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-5495">
+				<div id="div-comment-5495" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Sharon</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-5495">June 15, 2024 at 11:21 pm</a>		</div>
+
+		<p>Cupcakes were a hit. just wondering if the batter could be baked for a layer cake</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-5495" data-commentid="5495" data-postid="678" data-belowelement="div-comment-5495" data-respondelement="respond" data-replyto="Reply to Sharon" aria-label="Reply to Sharon">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-5505">
+				<div id="div-comment-5505" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-5505">June 17, 2024 at 12:39 pm</a>		</div>
+
+		<p>Hi Sharon, This recipe can surely be used to make a layer cake.  One recipe would yield 1 &#8211; 9 inch layer. Happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-5505" data-commentid="5505" data-postid="678" data-belowelement="div-comment-5505" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-4675">
+				<div id="div-comment-4675" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Elisha Greenway</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-4675">January 22, 2024 at 7:41 pm</a>		</div>
+
+		<p>Can this recipe be doubled?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-4675" data-commentid="4675" data-postid="678" data-belowelement="div-comment-4675" data-respondelement="respond" data-replyto="Reply to Elisha Greenway" aria-label="Reply to Elisha Greenway">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-4679">
+				<div id="div-comment-4679" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-4679">January 23, 2024 at 2:36 pm</a>		</div>
+
+		<p>Hi Elisha, This recipe can definitely be doubled to make 24 cupcakes. Simply double all of the ingredients and bake according to the directions. You should not have to adjust the bake time. Happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-4679" data-commentid="4679" data-postid="678" data-belowelement="div-comment-4679" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-3361">
+				<div id="div-comment-3361" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Pat McDaniel</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-3361">April 2, 2023 at 12:07 am</a>		</div>
+
+		<p>Does it matter if you use whole milk buttermilk for low fat buttermilk?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-3361" data-commentid="3361" data-postid="678" data-belowelement="div-comment-3361" data-respondelement="respond" data-replyto="Reply to Pat McDaniel" aria-label="Reply to Pat McDaniel">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-3366">
+				<div id="div-comment-3366" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-3366">April 2, 2023 at 8:01 pm</a>		</div>
+
+		<p>Hi Pat,  You an use low-fat and whole buttermilk interchangeably without great differences in the final baked good. Happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-3366" data-commentid="3366" data-postid="678" data-belowelement="div-comment-3366" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-2567">
+				<div id="div-comment-2567" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Debbie</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2567">August 27, 2022 at 4:31 pm</a>		</div>
+
+		<p>Tried recipe today and cupcakes came out mushy in the middle.  followed recipe exactly as written.  disappointed</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2567" data-commentid="2567" data-postid="678" data-belowelement="div-comment-2567" data-respondelement="respond" data-replyto="Reply to Debbie" aria-label="Reply to Debbie">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-2571">
+				<div id="div-comment-2571" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2571">August 29, 2022 at 8:27 pm</a>		</div>
+
+		<p>Hi Debbie,  We are sorry to hear that you were disappointed with the Classic Cupcake recipe.  Your information was forwarded to our Consumer Relations Department.  Someone will be reaching out.  Happy baking1</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2571" data-commentid="2571" data-postid="678" data-belowelement="div-comment-2571" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2550">
+				<div id="div-comment-2550" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Joyce</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2550">July 29, 2022 at 10:36 pm</a>		</div>
+
+		<p>I followed this recipe to the max and my cupcakes turned out delicious!!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2550" data-commentid="2550" data-postid="678" data-belowelement="div-comment-2550" data-respondelement="respond" data-replyto="Reply to Joyce" aria-label="Reply to Joyce">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2534">
+				<div id="div-comment-2534" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Clicquot</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2534">July 16, 2022 at 9:36 pm</a>		</div>
+
+		<p>This batter is SUPER loose (like alarmingly so). I went with it and was rewarded. Took exactly 23 minutes to bake (toothpick clean) and the cupcakes are light, moist and tender and perfect. Made 15 &#8220;normal size&#8221; cupcakes.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2534" data-commentid="2534" data-postid="678" data-belowelement="div-comment-2534" data-respondelement="respond" data-replyto="Reply to Clicquot" aria-label="Reply to Clicquot">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-2473">
+				<div id="div-comment-2473" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Karen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2473">May 28, 2022 at 4:27 pm</a>		</div>
+
+		<p>Is this batter supposed to be so “soupy”</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2473" data-commentid="2473" data-postid="678" data-belowelement="div-comment-2473" data-respondelement="respond" data-replyto="Reply to Karen" aria-label="Reply to Karen">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-2512">
+				<div id="div-comment-2512" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-2512">June 30, 2022 at 9:36 pm</a>		</div>
+
+		<p>Hi Karen,  Thanks for your feedback on the Classic Cupcake. After testing it was noted that the recipe needed adjusting.  A refreshed Classic Cupcake recipe is now in place.  Thanks and Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-2512" data-commentid="2512" data-postid="678" data-belowelement="div-comment-2512" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-1848">
+				<div id="div-comment-1848" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Michele</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1848">November 18, 2021 at 10:25 pm</a>		</div>
+
+		<p>Something went wrong and I had to throw them away.  Could be operator error.  I&#8217;m going to try again, using the same flour but a different recipe.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1848" data-commentid="1848" data-postid="678" data-belowelement="div-comment-1848" data-respondelement="respond" data-replyto="Reply to Michele" aria-label="Reply to Michele">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-1849">
+				<div id="div-comment-1849" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1849">November 18, 2021 at 10:50 pm</a>		</div>
+
+		<p>Hi Michelle, We&#8217;re so sorry that the recipe didn&#8217;t turn out as you had hoped.  Please come back and let us know if you have success with the second recipe. Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1849" data-commentid="1849" data-postid="678" data-belowelement="div-comment-1849" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-1456">
+				<div id="div-comment-1456" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Monika Leftwich</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1456">June 4, 2021 at 10:50 am</a>		</div>
+
+		<p>Do I use salted or unsalted butter?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1456" data-commentid="1456" data-postid="678" data-belowelement="div-comment-1456" data-respondelement="respond" data-replyto="Reply to Monika Leftwich" aria-label="Reply to Monika Leftwich">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-1457">
+				<div id="div-comment-1457" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1457">June 4, 2021 at 3:55 pm</a>		</div>
+
+		<p>Hi Monika,  You should use unsalted butter for the Classic Cupcake recipe.  Happy Baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1457" data-commentid="1457" data-postid="678" data-belowelement="div-comment-1457" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-1138">
+				<div id="div-comment-1138" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Kimberly</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1138">January 30, 2021 at 5:15 pm</a>		</div>
+
+		<p>What can I use instead of buttermilk</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1138" data-commentid="1138" data-postid="678" data-belowelement="div-comment-1138" data-respondelement="respond" data-replyto="Reply to Kimberly" aria-label="Reply to Kimberly">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-1141">
+				<div id="div-comment-1141" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1141">February 1, 2021 at 2:18 pm</a>		</div>
+
+		<p>Hi Kimberly, An easy substitution for buttermilk is; Use 1 tablespoon lemon juice or vinegar plus enough milk to make 1 cup. Let stand 5 minutes before using. Or add 1 ¾ teaspoons of cream of tartar to 1 cup whole milk.  You can find this substitution and many other useful tips on our Baking Tips page at <a href="https://swansdown.com/baking-tips/" rel="ugc">https://swansdown.com/baking-tips/</a>.  Happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1141" data-commentid="1141" data-postid="678" data-belowelement="div-comment-1141" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-1097">
+				<div id="div-comment-1097" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Veruschka</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1097">January 8, 2021 at 3:42 am</a>		</div>
+
+		<p>Can I ask how hot does the water have to be and when should I add it in ?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1097" data-commentid="1097" data-postid="678" data-belowelement="div-comment-1097" data-respondelement="respond" data-replyto="Reply to Veruschka" aria-label="Reply to Veruschka">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-dianeh bypostauthor odd alt depth-2" id="comment-1098">
+				<div id="div-comment-1098" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-1098">January 8, 2021 at 3:59 pm</a>		</div>
+
+		<p>Hi Veruschka, The hottest that you can get from your tap, or just at boiling is ideal.  You should add it in the second step &#8220;ADD remaining ingredients.&#8221;  Happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-1098" data-commentid="1098" data-postid="678" data-belowelement="div-comment-1098" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-780">
+				<div id="div-comment-780" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Lorraine</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-780">August 15, 2020 at 2:33 pm</a>		</div>
+
+		<p>Cupcakes were delicious. I can&#8217;t wait try the other recipes. Next time I need to make 24 cupcakes for my daughter&#8217;s birthday. I guess I will just double the recipe.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-780" data-commentid="780" data-postid="678" data-belowelement="div-comment-780" data-respondelement="respond" data-replyto="Reply to Lorraine" aria-label="Reply to Lorraine">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-728">
+				<div id="div-comment-728" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Melernea L Neff</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-728">July 24, 2020 at 11:36 am</a>		</div>
+
+		<p>I just made these. They are so tender and delicious. The icing is perfect. So hard to eat just two. I will be making these often.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-728" data-commentid="728" data-postid="678" data-belowelement="div-comment-728" data-respondelement="respond" data-replyto="Reply to Melernea L Neff" aria-label="Reply to Melernea L Neff">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-heatherh even depth-2" id="comment-733">
+				<div id="div-comment-733" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Swans Down</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-733">July 25, 2020 at 8:45 pm</a>		</div>
+
+		<p>Thanks Melernea, and happy baking!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-733" data-commentid="733" data-postid="678" data-belowelement="div-comment-733" data-respondelement="respond" data-replyto="Reply to Swans Down" aria-label="Reply to Swans Down">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-286">
+				<div id="div-comment-286" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Joan Amarnani</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-286">February 21, 2020 at 6:24 pm</a>		</div>
+
+		<p>Great flour</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-286" data-commentid="286" data-postid="678" data-belowelement="div-comment-286" data-respondelement="respond" data-replyto="Reply to Joan Amarnani" aria-label="Reply to Joan Amarnani">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-281">
+				<div id="div-comment-281" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Melasia</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-281">February 3, 2020 at 11:51 pm</a>		</div>
+
+		<p>I use these and the cupcakes where amazing ?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-281" data-commentid="281" data-postid="678" data-belowelement="div-comment-281" data-respondelement="respond" data-replyto="Reply to Melasia" aria-label="Reply to Melasia">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-99">
+				<div id="div-comment-99" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Carol Craig</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-99">July 31, 2019 at 2:57 pm</a>		</div>
+
+		<p>wonderful recipe</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-99" data-commentid="99" data-postid="678" data-belowelement="div-comment-99" data-respondelement="respond" data-replyto="Reply to Carol Craig" aria-label="Reply to Carol Craig">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-39">
+				<div id="div-comment-39" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Candy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-39">May 13, 2019 at 8:25 pm</a>		</div>
+
+		<p>These cupcakes were very disappointing. They turned out very &#8220;mushy,&#8221; which I attribute to the hot water. I won&#8217;t be making them again.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-39" data-commentid="39" data-postid="678" data-belowelement="div-comment-39" data-respondelement="respond" data-replyto="Reply to Candy" aria-label="Reply to Candy">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29">
+				<div id="div-comment-29" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Larry Syverson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-29">April 19, 2019 at 5:55 pm</a>		</div>
+
+		<p>I have made these in the past using this recipe.. and people said they were the BEST cupcakes they have ever had.  Every bit as good as the local cupcake shop!<br />
+You HAVE to use Swan&#8217;s Down cake flour or they won&#8217;t be nearly as good.  General purpose flour won&#8217;t cut it&#8230;</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-29" data-commentid="29" data-postid="678" data-belowelement="div-comment-29" data-respondelement="respond" data-replyto="Reply to Larry Syverson" aria-label="Reply to Larry Syverson">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-28">
+				<div id="div-comment-28" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Larry Syverson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-28">April 19, 2019 at 5:53 pm</a>		</div>
+
+		<p>What would I change to make these chocolate cupcakes.. with chocolate frosting?  i.e. how much chocolate to add to the batter and frosting.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-28" data-commentid="28" data-postid="678" data-belowelement="div-comment-28" data-respondelement="respond" data-replyto="Reply to Larry Syverson" aria-label="Reply to Larry Syverson">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21">
+				<div id="div-comment-21" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Shannon</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-21">March 23, 2019 at 3:43 pm</a>		</div>
+
+		<p>Made this recipe and it was amazing! The cupcakes were most and light. Absolutely perfect. I received so many compliments. I will never use another recipe for cupcakes again!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-21" data-commentid="21" data-postid="678" data-belowelement="div-comment-21" data-respondelement="respond" data-replyto="Reply to Shannon" aria-label="Reply to Shannon">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-15">
+				<div id="div-comment-15" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Constance Campbell</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://swansdown.com/recipes/classic-cupcakes/#comment-15">March 8, 2019 at 3:05 pm</a>		</div>
+
+		<p>I am making the Whipping cream pound cake  right now. This is about the 6th time I have made it. It is DELICIOUS!!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-15" data-commentid="15" data-postid="678" data-belowelement="div-comment-15" data-respondelement="respond" data-replyto="Reply to Constance Campbell" aria-label="Reply to Constance Campbell">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+
+            </ul>
+
+        	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span class="comment-reply-title-content">Leave a Review</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/recipes/classic-cupcakes/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://swansdown.com/wp/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
+	<script>document.addEventListener("DOMContentLoaded", function() { setTimeout(function(){ var e=document.getElementById("cf-turnstile-c-2174280226"); if(e&&!e.innerHTML.trim()){turnstile.render(e, {sitekey:"0x4AAAAAABgLuC4tRUL019w8"});} }, 200); });</script>
+	<p class="form-submit"><span id="cf-turnstile-c-2174280226" class="cf-turnstile cf-turnstile-comments" data-action="wordpress-comment" data-callback="turnstileCommentCallback" data-sitekey="0x4AAAAAABgLuC4tRUL019w8" data-theme="light" data-language="auto" data-appearance="always" data-size="normal" data-retry="auto" data-retry-interval="1000"></span><br class="cf-turnstile-br cf-turnstile-br-comments"><span class="cf-turnstile-comment" style="pointer-events: none; opacity: 0.5;"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /></span><script type="text/javascript">document.addEventListener("DOMContentLoaded", function() { document.body.addEventListener("click", function(event) { if (event.target.matches(".comment-reply-link, #cancel-comment-reply-link")) { turnstile.reset(".comment-form .cf-turnstile"); } }); });</script> <input type='hidden' name='comment_post_ID' value='678' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	
+    </div>
+
+
+  </div>
+</div>
+
+    </main>
+    <footer class="footer" id="Footer">
+
+        <div class="footer-feature">
+            <div id="newsletterPopup">
+    <a class="newsletter_signup-cta button" href="#popmake-3731">Sign up for emails</a>
+    <!--<span class="newsletterPrefs">Already subscribed? <a href="https://cloud.email.reilyproducts.com/swansdown-profile?utm_source=SD_website-footer&utm_medium=website&utm_campaign=SD_subscriber-preferences&utm_term=%%%3dredirectto(cloudpagesurl(173))%3d%%" target="_blank">Update your preferences.</a></span>-->
+</div>
+<!--End newsletterPopup-->        </div>
+
+        <div class="footer-main">
+
+            <div class="links">
+                <ul id="footer_navigation_left" class="links-menu"><li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="https://reilyproducts.com/">Reily Products</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="https://www.reilyfoodservice.com/">Foodservice</a></li>
+<li id="menu-item-4466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-4466"><a rel="privacy-policy" href="https://swansdown.com/privacy-policy/">Privacy</a></li>
+</ul><ul id="footer_navigation_right" class="links-menu"><li id="menu-item-4467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4467"><a href="https://shop.swansdown.com">Shop</a></li>
+<li id="menu-item-4569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4569"><a href="https://swansdown.com/faq/">FAQs</a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="https://reilyproducts.com/contact">Contact<span class="sr-only"> (Link opens external site)</span></a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a target="_blank" href="https://reilyproducts.com/careers/">Careers<span class="sr-only"> (Link opens external site)</span></a></li>
+</ul>            </div>
+
+            <div class="branding">
+                <a class="logo-link" href="/" aria-label="Swans Down Cake Flower Homepage"><span class="sr-only">Swansdown Homepage</span><img class="logo-footer lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Swansdown Logo" data-src="/wp-content/themes/swansdown-theme/images/logo-swans-down-footer.svg" decoding="async"><noscript><img class="logo-footer" src="/wp-content/themes/swansdown-theme/images/logo-swans-down-footer.svg" alt="Swansdown Logo" data-eio="l"></noscript></a>                <div class="social-icons">
+                    <a class="social-facebook"  href="https://www.facebook.com/SwansDownCakeFlour" target="_blank"><span class="sr-only">Follow us on Facebook (Link opens in new window)</span><i class="fab fa-facebook" aria-hidden="true"></i></a><a class="social-instagram"  href="https://www.instagram.com/swansdowncakeflour/" target="_blank"><span class="sr-only">Follow us on Instagram (Link opens in new window)</span><i class="fab fa-instagram" aria-hidden="true"></i></a><a class="social-youtube"  href="https://www.youtube.com/channel/UCr1lNFDBjTmEN1SnsHCtwiQ" target="_blank"><span class="sr-only">Follow us on Youtube (Link opens in new window)</span><i class="fab fa-youtube" aria-hidden="true"></i></a>                </div>
+            </div>
+
+            <div class="slogan">
+                <div class="footer-text">America's favorite cake flour since 1894</div><div class="footer-copyright">© 2026 Reily Foods Company</div>
+                <div class="accessibility">
+                    <a href="https://swansdown.com/accessibility-statement" style="color: white; text-decoration: none; margin: 0 0 0 0.25rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path d="M528 320C528 205.1 434.9 112 320 112C205.1 112 112 205.1 112 320C112 434.9 205.1 528 320 528C434.9 528 528 434.9 528 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM225.5 233.9L237.4 239C263.5 250.2 291.6 256 320.1 256C348.6 256 376.6 250.2 402.8 239L414.7 233.9C426.9 228.7 441 234.3 446.2 246.5C451.4 258.7 445.8 272.8 433.6 278L421.7 283.1C404.4 290.5 386.5 296 368.1 299.4L368.1 349.5C368.1 353.8 368.8 358.1 370.2 362.1L398.9 448.2C403.1 460.8 396.3 474.4 383.7 478.6C371.1 482.8 357.5 476 353.3 463.4L328.9 390.2C327.6 386.4 324.1 383.8 320.1 383.8C316.1 383.8 312.5 386.4 311.3 390.2L286.9 463.4C282.7 476 269.1 482.8 256.5 478.6C243.9 474.4 237 461 241.2 448.4L269.9 362.3C271.3 358.2 272 354 272 349.7L272 299.6C253.6 296.1 235.7 290.7 218.4 283.3L206.5 278.2C194.3 273 188.7 258.9 193.9 246.7C199.1 234.5 213.2 228.9 225.4 234.1zM320 144C342.1 144 360 161.9 360 184C360 206.1 342.1 224 320 224C297.9 224 280 206.1 280 184C280 161.9 297.9 144 320 144z" />
+                        </svg> Accessibility
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+    <script src="https://swansdown.com/wp-content/themes/swansdown-theme/scripts/app.js"></script>
+
+    </body>
+
+    <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp/wp-*.php","/wp/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/swansdown-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Recipe","url":"https:\/\/swansdown.com\/recipes\/classic-cupcakes\/","name":"Classic Cupcakes","author":"Swans Down Cake Flour","image":"https:\/\/swansdown.com\/wp-content\/uploads\/2018\/09\/SOP_Cupcake_web-LG-e1770142023962-1600x1200.jpg","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":18},"cookTime":"PT40M","prepTime":"PT15M","description":"Classic Cupcakes are a timeless treat everyone loves! Make tender cupcakes using Swans Down\u00ae Cake Flour, then top...","recipeIngredient":["1\/2 cup unsalted butter, room temperature","1 cup sugar","1 egg","1 1\/2 cups Swans Down\u00ae Cake Flour, \u00a0sifted before measuring","1\/2 teaspoon salt","1\/2 teaspoon baking soda","1\/2 teaspoon baking powder","1\/2 cup buttermilk","1 teaspoon vanilla","1\/2 cup boiling water","Cream Cheese Icing","8 ounces cream cheese, room temperature","2 1\/2 cups confectioners&#8217; sugar","2 teaspoons heavy cream, room temperature","3\/4 teaspoons vanilla extract"],"recipeInstructions":"\n\nPreheat oven to 350\u2109. Line a cupcake pan with paper liners.\nCream butter until light and fluffy. Add sugar and continue to beat on medium speed for another 2 to 3 minutes. Add egg and beat until completely combined.\nIn a separate bowl, sift together flour, salt, baking soda and baking powder.\nAdd flour mixture to butter mixture in thirds, alternating with adding the buttermilk, beginning and ending with the flour. Add vanilla and boiling water and continue to beat the batter on medium speed until smooth.\nPour batter into the lined cupcake pan. Bake for 20 to 25 minutes.\n\nCream Cheese Icing for Classic Cupcakes\n\nMix cream cheese and sugar at low speed with an electric mixer.\nAdd heavy cream and vanilla extract and mix at high speed until fluffy.\nChill in refrigerator until slightly stiff. Spread on cooled cupcakes and decorate with your choice of topping such as edible flowers, fresh fruit, grated chocolate or candy sprinkles.\n\n\n"}</script><div 
+	id="pum-3731" 
+	role="dialog" 
+	aria-modal="false"
+	class="pum pum-overlay pum-theme-3722 pum-theme-lightbox popmake-overlay pum-click-to-close auto_open click_open" 
+	data-popmake="{&quot;id&quot;:3731,&quot;slug&quot;:&quot;newsletter-optin&quot;,&quot;theme_id&quot;:3722,&quot;cookies&quot;:[{&quot;event&quot;:&quot;on_popup_close&quot;,&quot;settings&quot;:{&quot;name&quot;:&quot;pum-3731&quot;,&quot;key&quot;:&quot;&quot;,&quot;session&quot;:null,&quot;path&quot;:true,&quot;time&quot;:&quot;25 years&quot;}},{&quot;event&quot;:&quot;form_submission&quot;,&quot;settings&quot;:{&quot;name&quot;:&quot;pum-3731&quot;,&quot;key&quot;:&quot;&quot;,&quot;session&quot;:null,&quot;path&quot;:true,&quot;time&quot;:&quot;25 years&quot;,&quot;form&quot;:&quot;gravityforms_2&quot;,&quot;only_in_popup&quot;:true}}],&quot;triggers&quot;:[{&quot;type&quot;:&quot;auto_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:[&quot;pum-3731&quot;],&quot;delay&quot;:&quot;4000&quot;}},{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:true,&quot;tablet_disabled&quot;:true,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;300px&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;70%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}">
+
+	<div id="popmake-3731" class="pum-container popmake theme-3722 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+				
+		
+				<div class="pum-content popmake-content" tabindex="0">
+			<div id="sf_embedded-signup-wrapper" class="sf_popup-wrapper">
+<div class="sf_form">
+<h2>Pass it Down!</h2>
+<p>Sign up to join our email list and receive new recipes, baking tips, promotions and more.</p>
+
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_2' ><div id='gf_2' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_2' id='gform_2'  action='/recipes/classic-cupcakes/#gf_2' data-formid='2' novalidate> 
+ <input type='hidden' class='gforms-pum' value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' />
+                        <div class='gform-body gform_body'><div id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_2_2" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_2'>Phone</label><div class='ginput_container'><input name='input_2' id='input_2_2' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_2_2'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_2_1" class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_1'>Email Address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_2_1' type='email' value='' class='large'   placeholder='enter email address' aria-required="true" aria-invalid="false"  />
+                        </div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Send'  /> <input type='hidden' name='gform_ajax' value='form_id=2&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=7e87ed7cd99e942811cadf5867e652b9' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_2' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_2' id='gform_theme_2' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_2' id='gform_style_settings_2' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='USD' value='8ynwAo7UeHj6xs4Xgj9xay0tRCbQ0vX/F7kYC9nHmsFHCYStQa9KyQswtlYSIbxR8Y1rOMd2IkEF3mx30CWEf4uwTTEWgt/IMB4nXIFcTT3XjXs=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsIjI2ODAwZDVmYTZjZGI1ZWVlMmNmZmE1OGMxMzY3OGI5Il0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_2' id='gform_ajax_frame_2' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'https://swansdown.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://swansdown.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_2').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 2, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+</div>
+<div class="sf_img"><img decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAFJAQAAAAAJPy0xAAAAAnRSTlMAAHaTzTgAAAAjSURBVGje7cEBDQAAAMKg909tDjegAAAAAAAAAAAAAAAAODYyHwABy5BBMwAAAABJRU5ErkJggg==" alt="Cake Exchange" data-src="https://swansdown.com/wp-content/uploads/2021/08/Cake-Exchange-Popup-300x.jpg" class="lazyload ewww_webp_lazy_load" data-eio-rwidth="300" data-eio-rheight="329" data-src-webp="https://swansdown.com/wp-content/uploads/2021/08/Cake-Exchange-Popup-300x.jpg.webp" /><noscript><img decoding="async" src="https://swansdown.com/wp-content/uploads/2021/08/Cake-Exchange-Popup-300x.jpg" alt="Cake Exchange" data-eio="l" /></noscript></div>
+</div>
+		</div>
+
+				
+							<button type="button" class="pum-close popmake-close" aria-label="Close">
+			&times;			</button>
+		
+	</div>
+
+</div>
+<script id="eio-lazy-load-js-before">
+var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"bg_min_dpr":1.1,"threshold":0,"use_dpr":1};
+//# sourceURL=eio-lazy-load-js-before
+</script>
+<script async data-wp-strategy="async" id="eio-lazy-load-js" src="https://swansdown.com/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=870"></script>
+<script id="wp-dom-ready-js" src="https://swansdown.com/wp/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
+<script id="wp-hooks-js" src="https://swansdown.com/wp/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
+<script id="wp-i18n-js" src="https://swansdown.com/wp/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://swansdown.com/wp/wp-includes/js/dist/a11y.min.js?ver=af934e5259bc51b8718e"></script>
+<script id="gform_placeholder-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.10.2"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=7c651d0ba638ce98b9c65141edddd567"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c5e344ca386326b00b2602f5e32e6620"},"ajax":{"ajaxurl":"https://swansdown.com/wp/wp-admin/admin-ajax.php","ajax_submission_nonce":"4c195c9971","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://swansdown.com/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"5c55fecf0c"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://swansdown.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=301fdc9aa6144168f3b854c4c2c8f6d3"></script>
+<script id="jquery-ui-core-js" src="https://swansdown.com/wp/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"></script>
+<script id="popup-maker-site-js-extra">
+var pum_vars = {"version":"1.22.0","pm_dir_url":"https://swansdown.com/wp-content/plugins/popup-maker/","ajaxurl":"https://swansdown.com/wp/wp-admin/admin-ajax.php","restapi":"https://swansdown.com/wp-json/pum/v1","rest_nonce":null,"default_theme":"3721","debug_mode":"","disable_tracking":"","home_url":"/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"cookie_domain":"","paramNames":{"popup_id":"pid","cta":"cta","notrack":"notrack"},"analytics_enabled":"1","analytics_route":"analytics","analytics_api":"https://swansdown.com/wp-json/pum/v1"};
+var pum_sub_vars = {"ajaxurl":"https://swansdown.com/wp/wp-admin/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-3731":{"triggers":[{"type":"auto_open","settings":{"cookie_name":["pum-3731"],"delay":"4000"}}],"cookies":[{"event":"on_popup_close","settings":{"name":"pum-3731","key":"","session":null,"path":true,"time":"25 years"}},{"event":"form_submission","settings":{"name":"pum-3731","key":"","session":null,"path":true,"time":"25 years","form":"gravityforms_2","only_in_popup":true}}],"disable_on_mobile":true,"disable_on_tablet":true,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"3722","size":"medium","responsive_min_width":"300px","responsive_max_width":"70%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":true,"close_on_esc_press":true,"close_on_f4_press":true,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"lightbox","id":3731,"slug":"newsletter-optin"}};
+//# sourceURL=popup-maker-site-js-extra
+</script>
+<script id="popup-maker-site-js" src="//swansdown.com/wp-content/uploads/pum/pum-site-scripts.js?defer&#038;generated=1774623070&#038;ver=1.22.0"></script>
+<script id="mobile-detect-js" src="https://swansdown.com/wp-content/plugins/popup-maker/dist/assets/vendor/mobile-detect.min.js?ver=1.3.3"></script>
+<script data-wp-strategy="defer" id="cfturnstile-js" src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=auto"></script>
+<script id="cfturnstile-js-js" src="https://swansdown.com/wp-content/plugins/simple-cloudflare-turnstile/js/disable-submit.js?ver=5.0"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://swansdown.com/wp/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://swansdown.com/wp/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 2, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/?utm_source=w3tc&utm_medium=footer_comment&utm_campaign=free_plugin
+
+
+Served from: swansdown.com @ 2026-06-12 13:28:06 by W3 Total Cache
+-->

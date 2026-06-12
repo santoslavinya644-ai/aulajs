@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Tag responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este é uma site modelo">
+    <meta name="keywords" content="Sites, Web, Desenvolvimento Back-End">
+    <meta name="author" content="Ana julia anajulia2@gmail.com">
+    <title>AULA 2 - Desafio 01</title> <!-- Icone do site -->
+    <link rel="icon" type="image/jpg" href="../favicon.png">
+</head>
+
+<body>
+    <h1>MANIPULANDO ELEMENTOS<mark> AULA 02 - <abbr title="JAVASCRIPT">JS</abbr></mark></h1>
+    <hr>
+   <div>
+    <p> Estamos apredendo JAVASCRIPT</p>
+    <hr>
+    <p>Aprender é muito legal</p>
+    <p>E para ajudar o aprendizado, é preciso praticar e exercitar</p>
+    <!-- <p> a turma do dev é espetacular demais!</p> -->
+     <p> Eu fui adicionado de forma dinamica</p>
+
+
+   </div>
+   <script>
+    const tags_p = document.getElementsByTagName("p")
+    console.log(tags_p)
+    let tags_p_1 = tags_p[0];
+    console.log(tags_p_1);
+    tags_p_1.style.background="purple"
+    tags_p_1.style.color= "white"
+    tags_p_1.style.textAlign= "center"  
+
+
+    let tags_p_2 = tags_p[1];
+    console.log(tags_p_1);
+   
+    tags_p_2.style.color= "black"
+    tags_p_2.style.textAlign= "center"  
+    tags_p_2.style.fontSize = "large"
+
+    let tags_p_3 = tags_p[2];
+    console.log(tags_p_1);
+    tags_p_3.style.background="blue"
+    tags_p_3.style.color= "white"
+    tags_p_3.style.textAlign= "center"  
+    tags_p_3.style.fontSize = "large"
+
+    tags_p_3.innerHTML="A turma do dev é espetacular demais!"
+
+
+    const tags_div = document.getElementsByTagName("div");
+    console.log(tags_div);
+    let tags_div1 = tags_div[0];
+    tags_div1.style.backgroundcolor="pink"
+    tags_div1.style.border= "5px solid red"
+     
+    
+    
+    
+    
+    
+    
+    
+     </script>
+
+</body>
+
+</html>

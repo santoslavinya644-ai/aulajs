@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este é uma site modelo">
+    <meta name="keywords" content="Sites, Web, Desenvolvimento Back-End">
+    <meta name="author" content="Maria Eduarda M. demelogabrielm@gmail.com">
+    <title>DESAFIO 03 - JS</title>
+    <link rel="icon" type="image/jpg" href="../favicon.jpg">
+</head>
+
+<body>
+    <h1>DESAFIO 03 - TODAS AS OPERAÇÕES (+, -, *, /) </h1>
+    <hr>
+    <h2 id="resp"></h2>
+
+    <script>
+        window.alert("Seja bem-vindo ao site");
+        let num1 = window.prompt("Me informe um número: ");
+        num1 = parseFloat(num1)
+        console.log(num1);
+        let num2 = window.prompt("Me informe outro número: ")
+        console.log(num2);
+        num2 = parseFloat(num2)
+        let resp = window.prompt("Você deseja somar (+), multiplicar (*), subtrair (-) ou dividir(/)?");
+        let resultado = 0;
+        console.log(resp);
+        if (resp == "+") {
+            resultado = (num1 + num2);
+            window.alert("A soma é: " + resultado);
+        } else if (resp == "*") {
+            resultado = (num1 * num2);
+            window.alert("A multiplicação é: " + resultado);
+        } else if (resp == "-") {
+            resultado = (num1 * num2);
+            window.alert("A subtração é: " + resultado)
+        } else {
+            if(num2 == 0){
+                resultado = "Erro!! Não é possível"
+            }else{
+                resultado = (num1 / num2);
+                window.alert("A divisão é: "+ resultado);
+            }            
+        }
+
+
+        document.getElementById("resp").innerHTML=resultado
+        
+    </script>
+
+</body>
+
+</html>

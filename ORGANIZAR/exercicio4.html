@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Tag responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este é uma site modelo">
+    <meta name="keywords" content="Sites, Web, Desenvolvimento Back-End">
+    <meta name="author" content="Maria Eduarda M. demelogabrielm@gmail.com">
+    <title>EXERCÍCIOS 04 - JS</title> <!-- Icone do site -->
+    <link rel="icon" type="image/jpg" href="../favicon.jpg">
+</head>
+
+<body>
+    <h1>Integrando os recursos de interatividade do JS </h1>
+    <hr>
+    <script>
+        window.alert("Seja bem-vindo ao site");
+        let nome = window.prompt("Qual é o seu nome?");
+        window.alert(nome);
+        console.log(nome);
+        let resposta = window.confirm("Você deseja sair da página?");
+        console.log(resposta);
+        if (reposta == true) {
+            window.close()
+        } else {
+            window.alert("Aproveite o meu site, " + nome);
+        }
+
+        // console.log(nome);
+        // let reposta = window.confirm("Voce deseja sair da página?");
+        // console.log(resposta);
+        // if(reposta==true){
+        //     console.log("VOCÊ ESTÁ PRESTES A SAIR DA PÁGINA!");
+        //     setTimeout(()=> {
+        //         window.close()
+        //     }, 3000) //3000 milisegundos = 3s
+        // }else[
+        //     window.alert("Aproveite o meu site, "+nome);
+        // ]
+    </script>
+</body>
+
+</html
